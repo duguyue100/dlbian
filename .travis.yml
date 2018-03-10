@@ -9,6 +9,17 @@ addons:
     - wget
     - dosfstools
     - zip
+
+deploy:
+  provider: releases
+  api_key: $GITHUB_TOKEN 
+  file:
+  - dlbian.img.xz
+  - dlbian.img.zip
+  skip_cleanup: true
+  on:
+    tags: true
+
 script:
 - sudo bash ./create-image
 - xz -z dlbian.img -c > dlbian.img.xz
