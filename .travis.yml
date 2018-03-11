@@ -24,3 +24,6 @@ script:
 - sudo bash ./create-image
 - xz -z dlbian.img -c > dlbian.img.xz
 - zip dlbian.img.zip dlbian.img
+
+notifications:
+  email: false
